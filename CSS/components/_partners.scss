@@ -1,0 +1,96 @@
+// FUNCTIONS SCSS
+ // DISPLAY FUNCTION
+ @mixin displayed($pos, $dir) {
+    display: flex;
+    justify-content: $pos;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+// BUTTONS FUNCTION
+@mixin buttons($padd, $bg, $clr) {
+   padding: $padd;
+   border: none;
+   outline: none;
+   border-radius: 24px;
+   background: $bg;
+   color: $clr;
+}
+
+// FONTS 
+@mixin fonts($fnt, $wgt, $sz, $clr) {
+   font-family: $fnt;
+   font-weight: $wgt;
+   font-size: $sz;
+   text-transform: uppercase;
+   color: $clr;
+}
+
+// START GLOBAL CSS 
+
+// END GLOBAL CSS
+
+// START STYLING PARTNER PAGE
+.forms-area {
+    width: 100%;
+    min-height: 100vh;
+
+    .forms-title {
+        @include fonts($RussOne, 500, 35px, $primary_clr);
+        margin-bottom: 3.5rem;
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .form-inner-title {
+        @include fonts($Rajdhani, 500, 23px, $primary_clr);
+    }
+
+    .country_label {
+        @include fonts($Rajdhani, 500, 16px, $primary_clr);
+    }
+
+    .input-field {
+        padding: 10px;
+        border: none;
+        outline: none;
+        width:100%;
+        border-radius: 20px;
+        @include fonts($Rajdhani, 500, 16px, $primary_clr);
+    }
+
+    .trucks_svg {
+        width: 50px;
+        height: 50px;
+        margin-right: 1.5rem;
+    }
+
+    .truck_hint {
+        @include displayed(center, row);
+        p {
+            @include fonts($Rajdhani, 500, 17px, $primary_clr);
+        }
+    }
+
+    .radio-wrapper1,.radio-wrapper2 {
+        padding: 13px;
+        //background: $skyblue_clr;
+        @include displayed(space-between, row);
+        width: 100%;
+        label {
+            @include fonts($Rajdhani, 500, 17px, $primary_clr);
+        }
+    }
+
+    // START STYLING FORMS BUTTON
+    .partner-register-btn {
+        @include buttons(10px 45px, $primary_bg, $secondary_clr);
+        @include fonts($Rajdhani, 500, 16px, $secondary_clr);
+        box-shadow: $btnShadow;
+    }
+
+}
+// END STYLING PARTNER PAGE
